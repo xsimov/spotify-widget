@@ -64,8 +64,8 @@ h1 {
   border-left-color: #000;
 }
 
-.btn-play .playing:hover{
-background-color: rgba(0,0,0,0.5);
+.btn-play.playing:hover{   /*hover playing*/
+background-color: #DDD;
 }
 
 .btn-play.playing:before, .btn-play.playing:after {
@@ -85,7 +85,7 @@ background-color: rgba(0,0,0,0.5);
 }
 
 .btn-play.playing:hover:before, .btn-play.playing:hover:after {
-  background-color: #666;
+  background-color: #333;
 }
 
 .btn-play.playing:active:before, .btn-play.playing:active:after {
@@ -96,8 +96,9 @@ background-color: rgba(0,0,0,0.5);
   border-color: #888;
 }
 
-.btn-play.disabled:hover {
-  cursor: auto;
+.btn-play.disabled:hover {   /*hover disabled*/
+  cursor: pointer;
+  background-color: #DDD;
 }
 
 .btn-play.disabled:after {

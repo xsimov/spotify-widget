@@ -29,7 +29,7 @@ var xhr = new XMLHttpRequest();
     	// var song = document.getElementsByClassName('song')[0];
 
     	title.innerHTML = response.album.name;
-    	author.innerHTML = response.artists[0].name;
+    	author.innerHTML = response.artists[0].name;  //!!!!!
     	cover.src = response.album.images[0].url;
     	audio.src = response.preview_url;
 
