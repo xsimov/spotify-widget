@@ -1,6 +1,7 @@
 (function(){
 	
-	document.getElementsByClassName('btn-play')[0].addEventListener('click', changePlayButton);
+document.getElementsByClassName('btn-play')[0].addEventListener('click', changePlayButton);
+var progress = document.getElementsByTagName('progress')[0];
 
 	function changePlayButton(event){
 		$event = $(event.target);
@@ -21,7 +22,15 @@
 		console.log(progress.value);
  	  	});
 
+	// document.getElementsByTagName('form')[0].addEventListener('onsubmit', formatQ);
 
-// mediaElement.currentTime = 122;
+	function formatQ(event){
+		event.preventDefault();
+		var name = document.forms['form']['name'].value;
+		var q = name.replace(" ", "%20");
+		q += "&type=track";
+		alert(q);
+		// event.returnValue = false;
+	};
 
 })(window);

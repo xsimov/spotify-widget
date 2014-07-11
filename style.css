@@ -11,6 +11,10 @@ h1 {
   text-align: center;
 }
 
+.form{
+  text-align: center;
+}
+
 .widget {
   width: 300px;
   margin: 50px auto 0;
@@ -137,7 +141,7 @@ background-color: #DDD;
   position: relative;
 }
 
-img {
+.coverImg {
   max-width: 100%;
   max-height: 100%;
   position: absolute;
@@ -171,7 +175,7 @@ progress::-moz-progress-bar {
   background-color: #45a800;
 }
 
-input {
+input, .table {
   line-height: 1.7em;
   width: 280px;
   display: block;
@@ -181,6 +185,19 @@ input {
   outline: none;
   border: 1px solid #999;
   font-size: 13px;
+  text-align: center;
+}
+
+/*.table {
+  width: 70%;
+}
+*/
+.table img{
+  postion:initial;
+}
+
+.submit {
+  width: 100px;
 }
 
 input:hover {
