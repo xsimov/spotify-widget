@@ -8,6 +8,14 @@ var xhr = new XMLHttpRequest();
     xhr.setRequestHeader('Accept', 'application/json');
 
     var response;
+    var duration;
+    var progress = document.getElementsByTagName('progress')[0];
+	var title = document.getElementsByClassName('title')[0];
+	var author = document.getElementsByClassName('author')[0];
+	var cover = document.getElementsByClassName('cover')[0].getElementsByTagName('img')[0];
+	var audio = document.getElementById('audio');
+	// var artist = document.getElementsByClassName('artist')[0];
+	// var song = document.getElementsByClassName('song')[0];
 
     xhr.onload = function () {
       if (this.status === 200) { // the result is OK
@@ -21,19 +29,12 @@ var xhr = new XMLHttpRequest();
 
 
     function interact (response){
-    	var title = document.getElementsByClassName('title')[0];
-    	var author = document.getElementsByClassName('author')[0];
-    	var cover = document.getElementsByClassName('cover')[0].getElementsByTagName('img')[0];
-    	var audio = document.getElementById('audio');
-    	// var artist = document.getElementsByClassName('artist')[0];
-    	// var song = document.getElementsByClassName('song')[0];
-
     	title.innerHTML = response.album.name;
     	author.innerHTML = response.artists[0].name;  //!!!!!
     	cover.src = response.album.images[0].url;
     	audio.src = response.preview_url;
-
- 	    }
+    	duration = response.duration_ms / 1000;
+ 		};
 
 
 })(window);

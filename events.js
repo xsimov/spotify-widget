@@ -16,6 +16,12 @@
 		};
 	};
 
-	//funcion para evaluar cuanto audio lleva.
+	audio.addEventListener("timeupdate", function (){
+		progress.value = audio.currentTime / audio.duration * 100;
+		console.log(progress.value);
+ 	  	});
+
+
+// mediaElement.currentTime = 122;
 
 })(window);
