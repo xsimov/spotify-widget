@@ -52,7 +52,7 @@ h1 {
 }
 
 .btn-play:hover {
-  cursor: pointer;
+  cursor: hand;
   border-color: #666;
 }
 
@@ -62,6 +62,10 @@ h1 {
 
 .btn-play:active:after {
   border-left-color: #000;
+}
+
+.btn-play .playing:hover{
+background-color: rgba(0,0,0,0.5);
 }
 
 .btn-play.playing:before, .btn-play.playing:after {
