@@ -161,8 +161,8 @@ tr:hover{
   background-color: #FFF;
 }
 
-td, tr{
-  border: none;
+td, tr, table, tbody{
+  border: 0 none;
 }
 
 progress {

@@ -19,7 +19,7 @@ window.getTrack = function(queryURL,listFlag){
     xhr.onload = function () {
       if (this.status === 200) { // the result is OK
        response = JSON.parse(xhr.response);
-       console.log(response);
+       // console.log(response);
 
        if (listFlag === 0) interact(response);
        else displayTable(response);
