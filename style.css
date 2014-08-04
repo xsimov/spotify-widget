@@ -187,7 +187,7 @@ progress::-moz-progress-bar {
   background-color: #45a800;
 }
 
-input, .table {
+input, table {
   line-height: 1.7em;
   width: 280px;
   display: block;
@@ -200,10 +200,10 @@ input, .table {
   text-align: center;
 }
 
-/*.table {
-  width: 70%;
+.results {
+  width: 100%;
 }
-*/
+
 .table img{
   postion:initial;
 }

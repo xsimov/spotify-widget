@@ -1,14 +1,12 @@
 (function(){
 'use strict';
 
-    var response;
-    var duration;
+  var response;
+  var duration;
 	var title = document.getElementsByClassName('title')[0];
 	var author = document.getElementsByClassName('author')[0];
 	var cover = document.getElementsByClassName('cover')[0].getElementsByTagName('img')[0];
 	var audio = document.getElementById('audio');
-	// var artist = document.getElementsByClassName('artist')[0];
-	// var song = document.getElementsByClassName('song')[0];
 
 window.getTrack = function(queryURL,listFlag){
 	var xhr = new XMLHttpRequest();
@@ -17,18 +15,16 @@ window.getTrack = function(queryURL,listFlag){
     xhr.setRequestHeader('Accept', 'application/json');
 
     xhr.onload = function () {
-      if (this.status === 200) { // the result is OK
-       response = JSON.parse(xhr.response);
-       // console.log(response);
-
-       if (listFlag === 0) interact(response);
-       else displayTable(response);
+      if (this.status === 200) {
+        response = JSON.parse(xhr.response);
+        if (listFlag === 0) interact(response);
+        else if(response.tracks.items.length > 0) displayTable(response);
       }
     };
 
     xhr.send();
 
-    };
+  };
 
 
 function interact (response){
@@ -37,10 +33,14 @@ function interact (response){
 	cover.src = response.album.images[0].url;
 	audio.src = response.preview_url;
 	duration = response.duration_ms / 1000;
-	};
+};
 
 
 function displayTable(response){
+  var elem = document.getElementsByTagName('table')[0];
+  if (elem){
+    elem.parentNode.removeChild(elem);
+  }
 	var table = document.createElement('table');
 	var row;
 	var cell1;

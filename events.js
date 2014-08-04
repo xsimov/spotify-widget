@@ -25,9 +25,12 @@ document.getElementsByTagName('form')[0].addEventListener('submit', formatQ);
 function formatQ(event){
 	event.preventDefault();
 	var name = document.forms['form']['name'].value;
+	if (!name){
+		document.forms['form']['name'].value = "Insert something in here!!";
+		return;
+	}
 	var q = name.replace(" ", "%20");
 	q = "https://api.spotify.com/v1/search?q=" + q + "&type=track&limit=10";
-	console.log(q);
 	getTrack(q,1);
 	};
 
